@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/electricity-price-app/static/css/main.e6c13ad2.css",
-    "main.js": "/electricity-price-app/static/js/main.2bf603bd.js",
+    "main.js": "/electricity-price-app/static/js/main.d289567e.js",
     "index.html": "/electricity-price-app/index.html",
     "main.e6c13ad2.css.map": "/electricity-price-app/static/css/main.e6c13ad2.css.map",
-    "main.2bf603bd.js.map": "/electricity-price-app/static/js/main.2bf603bd.js.map"
+    "main.d289567e.js.map": "/electricity-price-app/static/js/main.d289567e.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.2bf603bd.js"
+    "static/js/main.d289567e.js"
   ]
 }
