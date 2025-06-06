@@ -1,7 +1,7 @@
 // src/api.ts
 export const fetchPriceData = async (biddingZone: string) => {
-    const response = await fetch(`/price?bzn=${biddingZone}`, { mode: 'no-cors', headers: { 'Accept': 'application/json' } });
-    console.log(await response.text())
+    const response = await fetch(`/api?bzn=${biddingZone}`, { mode: 'no-cors', headers: { 'Accept': 'application/json' } });
+    //console.log(await response.text())
     // if (!response.ok) {
     //     throw new Error(`Échec de la requête : ${response.status} ${response.statusText}`);
     // }

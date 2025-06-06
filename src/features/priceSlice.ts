@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface PriceData {
     time: string;
+    date: string;
     price: number;
 }
 

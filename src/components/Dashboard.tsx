@@ -20,9 +20,16 @@ const Dashboard: React.FC = () => {
                 if (data && data.unix_seconds && data.price && data.unix_seconds.length === data.price.length) {
                     const formattedPriceData = data.unix_seconds.map((time: number, index: number) => {
                         const date = new Date(time * 1000);
+                        const computedPrice = ((data.price[index] / 1000) + 0.136) * 1.06;
                         return {
                             time: date.toLocaleTimeString(),
-                            price: data.price[index],
+                            date: date.toLocaleDateString('fr-FR', {
+                                weekday: 'long',
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            }),
+                            price: computedPrice,
                         };
                     });
 
@@ -40,9 +47,12 @@ const Dashboard: React.FC = () => {
         fetchData();
     }, [dispatch]);
 
+    // Extraire la date du premier élément pour l'afficher dans le titre
+    const firstDataDate = priceData.length > 0 ? priceData[0].date : '';
+
     return (
         <div>
-            <h1>Prix de l’électricité en Belgique</h1>
+            <h1>Prix de l’électricité en Belgique pour {firstDataDate}</h1>
             {error ? (
                 <p style={{ color: 'red' }}>{error}</p>
             ) : priceData.length > 0 ? (
