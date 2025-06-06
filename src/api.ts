@@ -1,6 +1,8 @@
 // src/api.ts
 export const fetchPriceData = async (biddingZone: string) => {
-    const response = await fetch(`https://api.energy-charts.info/price?bzn=${biddingZone}`, { headers: { 'Accept': 'application/json' } });
+    const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
+    const apiUrl = `https://api.energy-charts.info/price?bzn=${biddingZone}`;
+    const response = await fetch(proxyUrl + encodeURIComponent(apiUrl), { headers: { 'Accept': 'application/json' } });
     //console.log(await response.text())
     // if (!response.ok) {
     //     throw new Error(`Échec de la requête : ${response.status} ${response.statusText}`);
