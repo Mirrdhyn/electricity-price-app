@@ -1,6 +1,6 @@
 // src/api.ts
 export const fetchPriceData = async (biddingZone: string) => {
-    const response = await fetch(`/api?bzn=${biddingZone}`, { mode: 'no-cors', headers: { 'Accept': 'application/json' } });
+    const response = await fetch(`https://api.energy-charts.info/price?bzn=${biddingZone}`, { mode: 'no-cors', headers: { 'Accept': 'application/json' } });
     //console.log(await response.text())
     // if (!response.ok) {
     //     throw new Error(`Échec de la requête : ${response.status} ${response.statusText}`);
